@@ -19,16 +19,16 @@ const App = () => {
       <ProductNavigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/food" element={<Food />} />
-        <Route path="/laptops" element={<Laptops />} />
-        <Route path="/beauty" element={<Beauty />} />
-        <Route path="/furniture" element={<Furniture />} />
-        <Route path="/home-decoration" element={<HomeDecoration />} />
-        <Route path="/mens-shirts" element={<MensShirts />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/womens-dresses" element={<WomensDresses />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="food" element={<Food />} />
+        <Route path="laptops" element={<Laptops />} />
+        <Route path="beauty" element={<Beauty />} />
+        <Route path="furniture" element={<Furniture />} />
+        <Route path="home-decoration" element={<HomeDecoration />} />
+        <Route path="mens-shirts" element={<MensShirts />} />
+        <Route path="products" element={<Products />} />
+        <Route path="womens-dresses" element={<WomensDresses />} />
       </Routes>
     </>
   );
