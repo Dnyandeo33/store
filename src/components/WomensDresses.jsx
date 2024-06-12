@@ -9,7 +9,6 @@ const WomensDresses = () => {
     error,
   } = useFetch('https://dummyjson.com/', 'products/category/womens-dresses');
 
-  console.log(products);
   return (
     <div>
       <section className="flex flex-col justify-center items-center">

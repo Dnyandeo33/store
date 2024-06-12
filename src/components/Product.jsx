@@ -2,7 +2,6 @@ import { Card } from 'flowbite-react';
 import PropTypes from 'prop-types';
 
 const Product = ({ product }) => {
-  console.log(product);
   return (
     <Card
       className="max-w-sm"
