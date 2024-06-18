@@ -1,12 +1,11 @@
-import useFetch from '../hooks/useFetch';
+import { useSelector } from 'react-redux';
+import useFetchData from '../hooks/useFetchData';
 import ShareData from './ShareData';
 
 const Food = () => {
-  const {
-    data: products,
-    loading,
-    error,
-  } = useFetch('https://dummyjson.com/', 'products/category/groceries');
+  useFetchData('products/category/groceries');
+  const { products, loading, error } = useSelector((state) => state.products);
+
   return (
     <ShareData
       title="Groceries"

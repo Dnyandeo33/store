@@ -1,13 +1,11 @@
-import useFetch from '../hooks/useFetch';
+import { useSelector } from 'react-redux';
+import useFetchData from '../hooks/useFetchData';
 import Header from './Header';
 import Product from './Product';
 
 const WomensDresses = () => {
-  const {
-    data: products,
-    loading,
-    error,
-  } = useFetch('https://dummyjson.com/', 'products/category/womens-dresses');
+  useFetchData('products/category/womens-dresses');
+  const { products, loading, error } = useSelector((state) => state.products);
 
   return (
     <div>

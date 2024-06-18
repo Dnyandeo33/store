@@ -10,6 +10,7 @@ import Navigation from './components/Navigation';
 import PageNotFound from './components/PageNotFound';
 import ProductNavigation from './components/ProductNavigation';
 import Products from './components/Products';
+import SingleProduct from './components/SingleProduct';
 import WomensDresses from './components/WomensDresses';
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="home-decoration" element={<HomeDecoration />} />
         <Route path="mens-shirts" element={<MensShirts />} />
         <Route path="products" element={<Products />} />
+        <Route path="products/product/:id" element={<SingleProduct />} />
         <Route path="womens-dresses" element={<WomensDresses />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
