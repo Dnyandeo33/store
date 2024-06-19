@@ -19,11 +19,13 @@ const Category = () => {
     <div className="container mx-auto flex flex-col">
       {loading && <p className="text-center">Loading...</p>}
       {error && <p>{error}</p>}
-      <div className=" container gap-5 flex flex-wrap justify-normal items-center">
-        {products &&
-          products.products.map((product) => (
-            <Product key={product.id} product={product} />
-          ))}
+      <div className=" container mx-auto">
+        <div className="gap-5 flex flex-wrap justify-center items-center">
+          {products &&
+            products.products.map((product) => (
+              <Product key={product.id} product={product} />
+            ))}
+        </div>
       </div>
     </div>
   );

@@ -1,9 +1,8 @@
 import { Navbar } from 'flowbite-react';
-import { Outlet } from 'react-router-dom';
-import useFetchData from '../hooks/useFetchData';
 import { useSelector } from 'react-redux';
+import { Outlet, useLocation } from 'react-router-dom';
 import Product from '../components/Product';
-import { useLocation } from 'react-router-dom';
+import useFetchData from '../hooks/useFetchData';
 
 const categories = [
   'laptops',
@@ -37,7 +36,7 @@ const Products = () => {
       </Navbar>
       <Outlet />
       {path === '/products' && (
-        <div className=" container mx-auto">
+        <div className="container mx-auto">
           <div className="flex flex-wrap gap-5 justify-center items-center">
             {products &&
               products.map((product) => (
