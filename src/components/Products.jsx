@@ -5,12 +5,18 @@ import Product from '../components/Product';
 import useFetchData from '../hooks/useFetchData';
 
 const categories = [
-  'laptops',
   'beauty',
   'furniture',
+  'groceries',
   'home-decoration',
+  'laptops',
   'mens-shirts',
+  'mens-shoes',
+  'sunglasses',
+  'tops',
+  'womens-bags',
   'womens-dresses',
+  'womens-jewellery',
 ];
 
 const Products = () => {
@@ -25,7 +31,7 @@ const Products = () => {
         <Navbar.Collapse>
           {categories.map((category, index) => (
             <Navbar.Link
-              className="capitalize"
+              className="capitalize "
               key={index}
               href={`/products/${category}`}
             >
