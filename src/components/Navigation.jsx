@@ -17,7 +17,7 @@ const Navigation = () => {
           Home
         </Navbar.Link>
         <Navbar.Link href="/products" active={path === '/products'}>
-          Product
+          Products
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>

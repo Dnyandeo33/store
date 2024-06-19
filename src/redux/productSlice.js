@@ -12,6 +12,11 @@ const getProductById = createAsyncThunk('productById', async (id) => {
     return response.data;
 })
 
+const getProductByCategory = createAsyncThunk('productByCategory', async (category) => {
+    const response = await axios.get(`${baseUrl}products/category/${category}`);
+    return response.data
+})
+
 
 const productSlice = createSlice({
 
@@ -19,7 +24,8 @@ const productSlice = createSlice({
 
     initialState: {
         products: [],
-        product: {},
+        categories: {},
+        product: [],
         error: null,
         loading: false,
     },
@@ -28,6 +34,7 @@ const productSlice = createSlice({
 
     extraReducers: (builder) => {
         builder
+            // get all products
             .addCase(getProducts.pending, (state) => {
                 state.loading = true;
             })
@@ -51,9 +58,21 @@ const productSlice = createSlice({
                 state.loading = false;
                 state.error = action.error.message;
             })
+            // get product by category
+            .addCase(getProductByCategory.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(getProductByCategory.fulfilled, (state, action) => {
+                state.loading = false;
+                state.categories[action.meta.arg] = action.payload
+            })
+            .addCase(getProductByCategory.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message;
+            })
     }
 })
-export { getProductById, getProducts };
+export { getProductByCategory, getProductById, getProducts };
 export default productSlice.reducer;
 
 
